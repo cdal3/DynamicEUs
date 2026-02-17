@@ -1,0 +1,13 @@
+Name: RetentiveVariables
+Id: g=c6ad2a4de294252e80a9ed7c8660b115
+Type: FolderType
+Children:
+- Name: SP1eUID
+  Id: g=e66ba6e9bafa6c9be7d2c9dc5bcf3544
+  Type: BaseDataVariableType
+  DataType: UInt32
+- Name: SP2eUID
+  Id: g=2b982dc6a2a009ae8a9c52ee4b031241
+  Type: BaseDataVariableType
+  DataType: UInt32
+  Value: 1

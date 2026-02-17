@@ -1,0 +1,471 @@
+Name: Model
+Id: g=ba0e93221360e3fde1551d376a633bde
+Type: ModelCategoryFolder
+Children:
+- Name: SepointObject
+  Id: g=b84aeec7f5097bad18804c4fadba582d
+  Supertype: BaseObjectType
+  Children:
+  - Name: SP
+    Id: g=383bb74bf3b74146dfe0d3b80f5fca10
+    Type: AnalogItemType
+    DataType: Float
+    Children:
+    - Name: EURange
+      Id: g=4cb1ba488daa3604c6d7266c9481847d
+      Type: RangeType
+      DataType: Range
+      Children:
+      - Name: Low
+        Id: g=c8d09e6a6f9c34e722932fcf09d99e5d
+        Type: BaseDataVariableType
+        DataType: Double
+      - Name: High
+        Id: g=958711999d1b586700e5c436c3adad17
+        Type: BaseDataVariableType
+        DataType: Double
+  - Class: Method
+    Name: UpdateEUInfo
+    Id: g=b396836fd0ad3e7027bd7c59e8ad12b9
+    Children:
+    - Name: ns=0;InputArguments
+      Id: g=f9b73562f1525e01e39e12e3a189d7a0
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"eUID","DataType":{"Id":7},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Name: EUID
+    Id: g=2fcac374d08ab6fb0fe1d2e34c002854
+    Type: BaseDataVariableType
+    DataType: UInt32
+  - Name: EUIDChanged
+    Id: g=c0abd10096cfc30524144a124dd510db
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=50fd14518a8c73d5bb68ae6c25721548
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../EUID"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=08f215e2ca12a003fb89f3ae98f62c65
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=628438a47ae1b1e9ccecbbf1a9834039
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=6d4f2ba8b62fa646f20d16f6071c7b0c
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=6dbc8ff73751e7f141ca5b582dda23f3
+          Type: BaseObjectType
+          Children:
+          - Name: ns=2;ObjectPointer
+            Id: g=690d0e15dab6db4b6e0ea6a14a1dbb4a
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=85473e074b37880697af44acd52fc0f9
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=ae9d223328a1c28724a686c9d009e9d8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@NodeId"
+              Children:
+              - Name: Mode
+                Id: g=43273ea9e0174f167c7f8ade43bf9650
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: ns=2;Method
+            Id: g=ab3ebbf8b9f66e22feb750016701c309
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "PromptForReboot"
+      - Name: EventArguments
+        Id: g=cc78d811dafa6c32ae8bd5eafa254b28
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=274b20b7a8aa2753f2c6f0d036eed37b
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=7634f264dd80bb6355a10e63d3144db6
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=6ca290a401b81c206d0cde92c07990aa
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=d2462c4453964fce4a5e6578be964124
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=2ee5f034942723506ad6740f1d9d125c
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=e612f5c73b1dff34daa5fd67d0fc0bbd
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=e95bfc55c87e7ecc0d62fc3763a47076
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=dec98a586110ad445e163af701e1b9e7
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=8c1c4067d00c35db1c05866c1d49e922
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=c5e05e8f0aeb84f8e7d2ad522eb7363e
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=4cf0cf25e8b18b5222e1b6743391597f
+          Type: PropertyType
+          DataType: UInt16
+  - Class: Method
+    Name: PromptForReboot
+    Id: g=b4469924e4e346fc2d9be87ed6ad889a
+- Name: SP1
+  Id: g=9fe941d09ee0237350d377a77201f5ff
+  Type: SepointObject
+  Children:
+  - Name: SP
+    Id: g=c47e5e3b615f29e6a14249f458a86eb0
+    Type: AnalogItemType
+    DataType: Float
+    Value: 1.0
+    Children:
+    - Name: EURange
+      Id: g=a58e58374066d14fd45cd0744c80856b
+      Type: RangeType
+      DataType: Range
+      Children:
+      - Name: Low
+        Id: g=e608082b51caa96fb8250a2a85fa775f
+        Type: BaseDataVariableType
+        DataType: Double
+      - Name: High
+        Id: g=f8db3b9727af38ac90ad80ba03b5cd9c
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 100.0
+    - Name: EngineeringUnits
+      Id: g=6e8ce586460190053579d1c95da24281
+      Type: EUInformationType
+      DataType: EUInformation
+      Children:
+      - Name: UnitId
+        Id: g=d5c4fdcadbbe34fd416b69ab245adca6
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: -1
+      - Name: DisplayName
+        Id: g=0c31edbf8e675733893848b1bd9642ab
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+      - Name: Description
+        Id: g=c2e3e7b91bf7bf97f3aac7f21d4252cb
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+  - Class: Reference
+    Target: g=b396836fd0ad3e7027bd7c59e8ad12b9
+    Direction: Forward
+  - Name: EUID
+    Id: g=0cebea2dcadd9609b331674a2a460504
+    Type: BaseDataVariableType
+    DataType: UInt32
+    Children:
+    - Name: DynamicLink
+      Id: g=1e34a3e58d6e4c949584b106cee4f4f3
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../RetentiveVariables/SP1eUID"
+      Children:
+      - Name: Mode
+        Id: g=ca7174bdc7f1230f541f1c92989d4ff3
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: EUIDChanged
+    Id: g=9042ae39fe7627e8be9e600ac01b641b
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=dd855ac50ae4963df65f4fb39b8bf6eb
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../EUID"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=2fcf8ff6a722887dc5fb92abca2a8e3a
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=40a62bda584a5d29fb13ba327ca416b3
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=d482fb0a44166af3fb50217b59b757c1
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=5df9ba90aba8cbc72b323b7b2100a36b
+          Type: BaseObjectType
+          Children:
+          - Name: ObjectPointer
+            Id: g=deb540587368d97092ec7e239731c984
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=167024f1102a16a3bd7c78d380e756f4
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=d5cd5337fb0d757ef56d088450fc5116
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@NodeId"
+          - Name: Method
+            Id: g=9b764cd34d8f5bdb2af62515b2949e0f
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "PromptForReboot"
+      - Name: EventArguments
+        Id: g=acbd96ec84a407d88742de037c88b619
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=7290decf94f82fce0c115f901861d8c3
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=7822dd0bf8cc980573f5246ec9fb7d9c
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=081239559d1c4d7c6accb901b51c95af
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=4707cb58fee631a98c66ad8c426deb0d
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=095f347e4cbdfa0cca3997e833694c78
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=3d2f15249dba0a91114ff76c39c4a0b8
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=8997203d0679a45bbe25b0e6855dfe6e
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=88409f062b0310eb7d53427fd4ab391e
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=e3b7ab87d39421327b1c396536d6f78b
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=ae2b3d87cd9a82a69bc8dcfe2fdca13b
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=771019d3ba48174a4fa06b7a4ea2efb9
+          Type: PropertyType
+          DataType: UInt16
+  - Class: Reference
+    Target: g=b4469924e4e346fc2d9be87ed6ad889a
+    Direction: Forward
+- Name: SP2
+  Id: g=fce299ae307b8d29f95ad9d2f8280e59
+  Type: SepointObject
+  Children:
+  - Name: SP
+    Id: g=fd624bb8b02d4ece7427d1ab4e6eefc3
+    Type: AnalogItemType
+    DataType: Float
+    Value: 5.0
+    Children:
+    - Name: EURange
+      Id: g=c05e5d1b0b85abce5502fd2c0d2e019f
+      Type: RangeType
+      DataType: Range
+      Children:
+      - Name: Low
+        Id: g=1695e6601677fbb7876334df12a0ede7
+        Type: BaseDataVariableType
+        DataType: Double
+      - Name: High
+        Id: g=1402700cfa898b11f4482f309d706540
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 100.0
+    - Name: EngineeringUnits
+      Id: g=d4aed0a1c12445d84d0afcfdb8f32204
+      Type: EUInformationType
+      DataType: EUInformation
+      Children:
+      - Name: UnitId
+        Id: g=f89cd1848260bd2a370bf7694bc2d1c7
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: -1
+      - Name: DisplayName
+        Id: g=60053a8c8b46afcd724681c0fbccd8ef
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+      - Name: Description
+        Id: g=ece365f2460a5993d9453b137d315618
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+  - Class: Reference
+    Target: g=b396836fd0ad3e7027bd7c59e8ad12b9
+    Direction: Forward
+  - Name: EUID
+    Id: g=15932e716fcd605f4bf8a68498b11c0c
+    Type: BaseDataVariableType
+    DataType: UInt32
+    Children:
+    - Name: DynamicLink
+      Id: g=a620972d2a20e02d1205d209ca4f2fa0
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../RetentiveVariables/SP2eUID"
+      Children:
+      - Name: Mode
+        Id: g=3ab01596519fd39ab36294e1ed91ad75
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: EUIDChanged
+    Id: g=849360fd54ea5c5aefe09f6423fa5e62
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=1c537bf941a95045bac36b5e4579244e
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../EUID"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=946bae36e29a95ca7744152ed050802f
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=347645301d695c162912597072a89ce6
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=24b60065668fd84a210b725d282f98f2
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=929b13edec052c906597f2fb61702034
+          Type: BaseObjectType
+          Children:
+          - Name: ObjectPointer
+            Id: g=db6acb9a5d0a19e3d1fbf58258f1e46b
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=d78ee6a832631e985d78ea367fa8f919
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=edd23ff6fdc7685079da28c857fd0973
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@NodeId"
+          - Name: Method
+            Id: g=69bed1bccf72ed6c0fd76277fd20997d
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "PromptForReboot"
+      - Name: EventArguments
+        Id: g=31285d1d2ec2660517ae6f243785866b
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=9d89b043f5cf7ba1f71905ce1ba43d08
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=d7d725f667b0c42a5531fa48182f5b7d
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=d0f29c9d462f6d9c4cbdebeef23744e3
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=0ba5449e723069f04fb65ba43ad1975d
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=2b806cc7c687b5a1061299af5b42b5aa
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=12fb93c615d8e4839ddd9beb4b8f4a03
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=db894ad55e532d4695b5ce2a62d70d69
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=e9fee8e89ccc9419c3fba4af7e494328
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=300364506e77015bebf42d53d85c1908
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=6ce2678b89e80e315ee51ed9bd7cff90
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=1120c4fd6bece0f70c14728ba65da622
+          Type: PropertyType
+          DataType: UInt16
+  - Class: Reference
+    Target: g=b4469924e4e346fc2d9be87ed6ad889a
+    Direction: Forward
+- Name: EngineeringUnitDictionary1
+  Id: g=5ec540f8b7602a494c14b982f3183a5a
+  Type: EngineeringUnitDictionary
+  DataType: EngineeringUnitDictionaryItem
+  ValueRank: OneDimension
+  ArrayDimensions: [0]
+  Value: [{"TypeId":{"Id":239,"Namespace":1},"Body":{"UnitId":999,"DisplayName":{"LocaleId":"en-US","Text":""},"Description":{"LocaleId":"en-US","Text":""},"PhysicalDimension":25,"Slope":1.0,"Intercept":0.0}}]
+- File: Folder1/Folder1.yaml
+- File: RetentiveVariables/RetentiveVariables.yaml

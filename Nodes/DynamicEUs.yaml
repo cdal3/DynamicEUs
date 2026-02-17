@@ -1,0 +1,88 @@
+Name: DynamicEUs
+Id: g=4feee81213cea8a4ed1e1fd36388aa05
+Type: ProjectFolder
+Children:
+- Name: Localization
+  Id: g=527d9aa7fb12c76907b46e439847e349
+  Type: PropertyGroup
+  Children:
+  - Name: Locales
+    Id: g=12271e3144434bdc11213e56f233ebfc
+    Type: BaseDataVariableType
+    DataType: LocaleId
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: ["en-US","en-GB","en-CA"]
+  - Name: LocaleFallbackList
+    Id: g=54ba40bd08f43e40abe421de36364a63
+    Type: BaseDataVariableType
+    DataType: LocaleId
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: ["en-US"]
+  - Name: MeasurementSystemMap
+    Id: g=07457134b9a92d111559b61d11fe8838
+    Type: BaseDataVariableType
+    DataType: MeasurementSystemMapItem
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":235,"Namespace":1},"Body":{"From":{"TypeId":{"Id":244,"Namespace":1},"Body":{"Id":999,"NamespaceIndex":7}},"InternationalSystemOfUnits":{"TypeId":{"Id":244,"Namespace":1},"Body":{"Id":999,"NamespaceIndex":7}},"USCustomarySystem":{"TypeId":{"Id":244,"Namespace":1},"Body":{"Id":999,"NamespaceIndex":7}},"BritishImperialUnits":{"TypeId":{"Id":244,"Namespace":1},"Body":{"Id":999,"NamespaceIndex":7}}}}]
+- Name: Authentication
+  Id: g=04a046dbf924432cf8b5f1937747f18c
+  Type: PropertyGroup
+  Children:
+  - Name: DefaultUserFolder
+    Id: g=d07bcffc5f7dc41dfff0f0448bb07bd9
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/DynamicEUs/Security/Users"
+    Children:
+    - Name: Kind
+      Id: g=f66f8c112229ce0231fe73aabad9c40b
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
+- Name: PasswordPolicy
+  Id: g=ee54b398f298510f7387e750ec77d458
+  Type: PasswordPolicy
+  Children:
+  - Name: MaximumPasswordAge
+    Id: g=7aa79a92581415fd53fad29c59c93322
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: EnforcePasswordHistory
+    Id: g=016ab73ac98b3ae93e81b2d58654f8b3
+    Type: BaseDataVariableType
+    DataType: Byte
+    Value: 1
+  - Name: MinimumPasswordAge
+    Id: g=a1b6fb351fa0e62ca3ab7b5e3e7eb25b
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MinimumPasswordLength
+    Id: g=d0b8f0809ddd6722e823da3498958fd5
+    Type: BaseDataVariableType
+    DataType: Byte
+    Value: 8
+- Name: AlarmConfiguration
+  Id: g=cb14a65711ed74d43bdcb5767f76a96c
+  Type: PropertyGroup
+- File: UI/UI.yaml
+- File: Model/Model.yaml
+- File: Converters/Converters.yaml
+- File: Alarms/Alarms.yaml
+- File: Recipes/Recipes.yaml
+- File: Loggers/Loggers.yaml
+- File: DataStores/DataStores.yaml
+- File: Reports/Reports.yaml
+- File: 'OPC-UA/OPC-UA.yaml'
+- File: MQTT/MQTT.yaml
+- File: CommDrivers/CommDrivers.yaml
+- File: NetLogic/NetLogic.yaml
+- File: Security/Security.yaml
+- File: System/System.yaml
+- File: Translations/Translations.yaml
+- File: Retentivity/Retentivity.yaml
+- Name: RuntimeOptimization
+  Id: g=d6a3ca4f7531b02e24c03123541222cb
+  Type: PropertyGroup

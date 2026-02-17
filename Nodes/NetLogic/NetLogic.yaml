@@ -1,0 +1,11 @@
+Name: NetLogic
+Id: g=f44614f214b5f539deca6d05c3c9657b
+Type: NetLogicCategoryFolder
+Children:
+- Name: RuntimeNetLogic1
+  Id: g=3cc7c94ddbd3f0c56024af90b6f60829
+  Type: NetLogic
+  Children:
+  - Class: Method
+    Name: Method1
+    Id: g=a4264d9086a246708881362a3c544222

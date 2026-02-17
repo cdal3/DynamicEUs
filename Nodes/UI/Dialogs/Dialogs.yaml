@@ -1,0 +1,230 @@
+Name: Dialogs
+Id: g=212cfe434b83ce38d0166252acb98f92
+Type: FolderType
+Children:
+- Name: DialogEUChanged
+  Id: g=01e5db4c68d039fcda69dd4a9a48cb2a
+  Supertype: Dialog
+  ReferenceType: HasComponent
+  Children:
+  - Class: Reference
+    Target: ns=3;i=519
+    Direction: Forward
+  - Name: Width
+    Id: g=219cb4915aa54cec83b1d012b2d88a09
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 300.0
+  - Name: Height
+    Id: g=5c9ec1a52020d778b940ddb843ffee8c
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 300.0
+  - Name: Rectangle1
+    Id: g=df492bbaa7090aca54b8cae8d4e00665
+    Type: Rectangle
+    Children:
+    - Name: Width
+      Id: g=9faa38630f338637809d81be20f627c6
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 50.0
+    - Name: Height
+      Id: g=7a0def552f80c3429a91b2ee9c32100a
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 50.0
+    - Name: HorizontalAlignment
+      Id: g=a5a6233441131290823097fd8319d02b
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Id: g=f78c0ee4add31a609181d0a096743688
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
+  - Name: Button1
+    Id: g=864e4d447c65eb50958c52107ef9b20f
+    Type: Button
+    Children:
+    - Name: Text
+      Id: g=5c63ac5934f865553f08fb69ff2aab74
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Close"}
+    - Name: HorizontalAlignment
+      Id: g=8da96c8091ec0d90004e3742217894a8
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: TopMargin
+      Id: g=0198a65d470849d55f4ae14a1218b8b0
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 8.0
+    - Name: RightMargin
+      Id: g=017b12e965203b6ff09c4274c533d5d7
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 8.0
+    - Name: MouseClickEventHandler1
+      Id: g=ff164b17c425965bf9dd67e5f42a8b04
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=eb784f476862e29d644a18d7d272a834
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+      - Name: MethodsToCall
+        Id: g=b47e18a7e6c750a3e6de68ba69423d93
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=4a4a8ec2a478edce1534bc01c2d8d8ab
+          Type: BaseObjectType
+          Children:
+          - Name: ns=2;ObjectPointer
+            Id: g=d40873accb46681a2829e580e072857c
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=46fb269f46819872f85e56d795df4a1f
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=7fb7999a081fc168793a729aebb30ccb
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../DialogLogic@NodeId"
+              Children:
+              - Name: Mode
+                Id: g=0f30d9dffb44b51490f7b198d00cdf6e
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: ns=2;Method
+            Id: g=455fa908edbe5055c24d7138c7b75b83
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "CloseAllDialogs"
+      - Name: EventArguments
+        Id: g=93d6cb5c94f2d2413b83dfa836534c6d
+        Type: MouseClickEvent
+        Children:
+        - Name: EventId
+          Id: g=527778bce688098d689ded9cbed9aa71
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=a8f7ef1278adda77e7ee9859ce1ae02d
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=84d5e844e1de0215c66da0f8bf6050c7
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=710c50486815562410432631676b3587
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=5099ba6fe142294235e1ac24f7909de1
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=260015c94c55b4141bb8bb6916707365
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=d68e841bef797d1a81663747829028b2
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=9237f6e19b44aefe8ed69581279cab46
+          Type: PropertyType
+          DataType: UInt16
+  - Name: DialogLogic
+    Id: g=196331041053886cc4a64d530c683198
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: CloseAllDialogs
+      Id: g=c2d6ca8d232c55af3c4d6c0d7f51a0b7
+  - Name: Label1
+    Id: g=3ae373477097a9532b7922a6db48c3ff
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=b592af3acd477eef26b35748b4a3dad9
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Setpoint EU Changed. Reboot Required"}
+    - Name: HorizontalAlignment
+      Id: g=6be987fb0302c3e182d473b528cdfc6a
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Id: g=9a305704059dc5a10a09dfb10657b671
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: LeftMargin
+      Id: g=662e6146ddd9784af49caf82b9211e88
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 8.0
+    - Name: RightMargin
+      Id: g=c4e51b598fe62275525ed1db2c322165
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 8.0
+    - Name: TopMargin
+      Id: g=4cc0b710b53166ffe2970f8b99fec8ca
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 96.0
+    - Name: BottomMargin
+      Id: g=d3348612c5487c1c3c187d4f09ddb9e2
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 96.0
+    - Name: TextHorizontalAlignment
+      Id: g=92d2e58568c5e5dbb027d96eb5ee3652
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: TextVerticalAlignment
+      Id: g=9bd04e204c77afd6e9612f8fa8b07a29
+      Type: BaseVariableType
+      DataType: TextVerticalAlignment
+      ModellingRule: Optional
+      Value: 1
+  - Name: Modal
+    Id: g=e73a163abd1fcba4568f7f36846339d5
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
